@@ -1,0 +1,79 @@
+Essentially:
+There are exFOO.txt for every FOO.txt included with the terrorists.
+These exFOOs are the distributed files, same as the backup - no they're not
+The FOO.txts are then copied into dark/deftxt
+Some FSMs and AIPs are copied to dark/aip
+The installer extracts the zip to dark/addon/terr
+
+dark/deftxt:
+animate.txt
+build.txt
+damage.txt
+overlay.txt
+ovleff.txt
+trneff.txt
+units.txt
+weapon.txt
+
+
+dark/local:
+mlstring.cfg
+
+dark:
+packman.cfg (packman.ter)
+
+These files all need to be backed up, so we can create a mirror of this tree
+in dark/addon/terr/backup
+The installer also allows to save & restore terr configuration - we do not need
+to support this
+
+terr.cfg and terr.ftg need to go in dark/addon/terr
+
+Strangely GAMEMSG.TXT is not copied anywhere.  Is it redundant?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FIXME:
+
+- If terr uninstall is done with an installation created by the Windows
+  batchfile installer, it will fail since the backups won't be found.  Also if
+  it has been done manually.  This is obvious I think.

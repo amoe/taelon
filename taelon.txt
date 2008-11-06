@@ -1,0 +1,27 @@
+POLICY
+------
+When the installation is as simple as unzipping the file to a certain game
+directory, I don't provide an installer.
+
+For instance, here's how to install the map "Jake":
+
+unzip -d ~/win/programs/dkreign/dark/scenario/multi 02jake.zip
+
+Fairly simple, eh?
+
+
+FAN BLADE ATTACK BOAT
+---------------------
+The directory hierarchy is contained in the zipfile itself (if only Auran had
+adopted this method for all the units).  To install, just do the following:
+
+unzip -d ~/win/programs/dkreign fanblade.exe
+
+Beware that in contrast to other units, the Fanblade will install a multiplayer
+custom mission rather than a single player one.
+
+
+TERRORISTS SIDE
+---------------
+Use "taelon terr" to manipulate it.
+The Terrorists work fine with v1.4.
