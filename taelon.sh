@@ -3,6 +3,8 @@
 prefix=/usr/local
 prgname=taelon
 
+# "ik heb genoeg matisse"
+
 main() {
     test $# -eq 0 && { usage; exit 1; }
     
@@ -28,6 +30,7 @@ Commands:
     terr       manipulate the terrorists side
     unit       install downloadable units
     unpack     unpack pak archives
+    combo      manipulate the combo pack
 
 Enjoy."
 }

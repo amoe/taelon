@@ -5,7 +5,7 @@ directory, I don't provide an installer.
 
 For instance, here's how to install the map "Jake":
 
-unzip -d ~/win/programs/dkreign/dark/scenario/multi 02jake.zip
+  unzip -d ~/win/programs/dkreign/dark/scenario/multi 02jake.zip
 
 Fairly simple, eh?
 
@@ -15,7 +15,7 @@ FAN BLADE ATTACK BOAT
 The directory hierarchy is contained in the zipfile itself (if only Auran had
 adopted this method for all the units).  To install, just do the following:
 
-unzip -d ~/win/programs/dkreign fanblade.exe
+  unzip -d ~/win/programs/dkreign fanblade.exe
 
 Beware that in contrast to other units, the Fanblade will install a multiplayer
 custom mission rather than a single player one.
@@ -25,3 +25,47 @@ TERRORISTS SIDE
 ---------------
 Use "taelon terr" to manipulate it.
 The Terrorists work fine with v1.4.
+Don't try to use 'terr' to uninstall the Terrorists as installed by 'terr.bat'
+on Windows; it will not work, and may break catastrophically (though probably
+not).  Only use 'terr uninstall' when 'terr installl' has been used previously.
+
+
+INSTALL UNITS
+-------------
+To install a unit:
+
+  taelon unit ~/win/programs/dkreign gore.zip
+
+where 'gore.zip' is the zipfile containing the unit you want to install.
+
+Be warned that units will only appear in one scenario named after the unit by
+default, these are accessible under 'Single player' > 'Play custom mission'.
+Manual editing is required to add a specific unit to all missions;
+alternatively, installing the Combo Pack adds a large subset of available
+third-party units & buildings to all missions.
+
+There's no particular requirement to uninstall units installed through 'taelon
+unit', since they take minimal space, only appear in their scenario, and do not
+inhibit multiplayer with stock installations.  However, it's simple to uninstall
+them manually:
+
+  rm -r ~/win/programs/dkreign/dark/addon/gore
+  rm -r ~/win/programs/dkreign/dark/scenario/single/gore
+
+
+COMBO PACK
+----------
+Install the combo pack:
+
+  taelon combo install ~/win/programs/dkreign combo.exe
+
+Uninstall it and revert to normal:
+
+  taelon combo uninstall
+
+
+SPRITE UTILITIES
+----------------
+Since source wasn't provided for these command-line utilities, you can run them
+with Wine.  'makesprite.exe', 'makerow.exe', 'makepal.exe', 'mkcursor.exe',
+'maketiles.exe', and 'showsprite.exe' are available at <GAME>/dark/sprutils.

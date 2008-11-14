@@ -23,6 +23,8 @@
 
 prefix = /usr/local
 
+obj_sh = terr.sh unit.sh combo.sh
+
 all: unpack pak paklist
 
 unpack: unpack.c
@@ -34,6 +36,11 @@ pak: pak.c
 paklist: paklist.c
 	cc -o paklist -Wall paklist.c
 
+test:
+	for sh in $(obj_sh); do \
+	    echo "installing script: $$sh" \
+	done
+
 clean:
 	rm -f unpack pak paklist
 
@@ -41,8 +48,9 @@ install: taelon.sh terr.sh unpack pak paklist
 	cp taelon.sh $(prefix)/bin/taelon
 	chmod +x $(prefix)/bin/taelon
 	mkdir -p $(prefix)/lib/taelon
-	cp terr.sh $(prefix)/lib/taelon/terr
-	chmod +x $(prefix)/lib/taelon/terr
-	cp unit.sh $(prefix)/lib/taelon/unit
-	chmod +x $(prefix)/lib/taelon/unit
+	for sh in $(obj_sh); do \
+	    exe=$(prefix)/lib/taelon/$$(basename $$sh .sh); \
+	    cp $$sh $$exe; \
+	    chmod +x $$exe; \
+	done
 	cp pak unpack paklist $(prefix)/lib/taelon
