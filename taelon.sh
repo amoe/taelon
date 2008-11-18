@@ -31,6 +31,7 @@ Commands:
     unit       install downloadable units
     unpack     unpack pak archives
     combo      manipulate the combo pack
+    build      install downloadable buildings
 
 Enjoy."
 }

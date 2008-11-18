@@ -69,3 +69,17 @@ SPRITE UTILITIES
 Since source wasn't provided for these command-line utilities, you can run them
 with Wine.  'makesprite.exe', 'makerow.exe', 'makepal.exe', 'mkcursor.exe',
 'maketiles.exe', and 'showsprite.exe' are available at <GAME>/dark/sprutils.
+
+
+BUILDINGS
+---------
+To install a building:
+
+  taelon build ~/win/programs/dkreign solar.zip
+
+Uninstall works in exactly the same way as with units.
+
+'walls.zip' does not work; it crashes Dark Reign.  I believe that it doesn't
+work on Windows either, unfortunately I don't have a Windows machine at this
+time to confirm the theory.  'walls.sh' installs in exactly the same way as
+'walls.bat' from the original archive, and all other buildings work fine.

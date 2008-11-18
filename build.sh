@@ -1,10 +1,6 @@
 #! /bin/sh
 
-prgname=unit
-
-# weird cases: gore, zenn, kylguard
-# gore.zip is handled
-# fanblade.exe can be extracted directly to $game
+prgname=build
 
 main() {
     test $# -ne 2 && die "exactly two arguments required"
@@ -12,28 +8,28 @@ main() {
     game="$1/dark"
     zip=$2
 
-    unit=$(basename "$zip" .zip)
+    building=$(basename "$zip" .zip)
 
     tmp=$(mktemp -d)
     unzip -qd "$tmp" "$zip"
     lc "$tmp"/*
 
-    addon="$game/addon/$unit"
-    scenario="$game/scenario/single/$unit"
+    addon="$game/addon/$building"
+    scenario="$game/scenario/single/$building"
 
     mkdir -p "$addon" "$scenario"
 
-    cp "${tmp}/${unit}.ftg" "${tmp}/${unit}.cfg" "$addon"
-    # optional: gore
-    test -e "${tmp}/${unit}sfx.ftg" && cp "${tmp}/${unit}sfx.ftg" "$addon"
+    cp "${tmp}/${building}.ftg" "${tmp}/${building}.cfg" "$addon"
 
-    cp "${tmp}/${unit}.map" "${tmp}/${unit}.scn" "${tmp}/tactics.mm" \
+    cp "${tmp}/${building}.map" "${tmp}/${building}.scn" "${tmp}/tactics.mm" \
       "${tmp}/packman.cfg" "${tmp}/mlstring.cfg" \
       "$scenario"
 
     test -e "${tmp}/units.txt" && cp "${tmp}/units.txt" "$scenario"
     test -e "${tmp}/animate.txt" && cp "${tmp}/animate.txt" "$scenario"
     test -e "${tmp}/weapon.txt" && cp "${tmp}/weapon.txt" "$scenario"
+    test -e "${tmp}/build.txt" && cp "${tmp}/build.txt" "$scenario"
+    test -e "${tmp}/ovleff.txt" && cp "${tmp}/ovleff.txt" "$scenario"
 
     rm -r "$tmp"
 }
