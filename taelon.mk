@@ -44,6 +44,10 @@ test:
 clean:
 	rm -f unpack pak paklist
 
+release: clean
+	tar -cf release.tar *
+	gzip -9 release.tar
+
 install: taelon.sh terr.sh unpack pak paklist
 	cp taelon.sh $(prefix)/bin/taelon
 	chmod +x $(prefix)/bin/taelon

@@ -1,0 +1,4 @@
+TODO
+
+Pattern for scripts so we can optimize them: most can be expressed as a
+mapping of filenames to destinations.  In fact, all of them can.  In general files should only be copied if they exist and all dirs should be created.b
