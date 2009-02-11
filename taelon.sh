@@ -32,6 +32,7 @@ Commands:
     unpack     unpack pak archives
     combo      manipulate the combo pack
     build      install downloadable buildings
+    terrain    install a terrain
 
 Enjoy."
 }

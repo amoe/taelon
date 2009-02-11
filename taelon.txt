@@ -1,3 +1,24 @@
+WHAT IS IT?
+-----------
+Taelon is an add-on installer for the game Dark Reign.  It replaces the
+batchfiles distributed with the addons from the Auran website, since these do
+not work reliably under Linux.  It also provides native Linux replacements for
+the FTG archive tools distributed wth the game.
+
+To be clearer, this program is designed to operate with Dark Reign running under
+Wine (there is no native port), but since all it does is manipulate files it
+does not need to run under Wine itself.
+
+
+INVOCATION
+----------
+Basic syntax is:
+
+  taelon <subcommand> <arguments>
+  
+Type 'taelon' for a brief usage listing.
+
+
 POLICY
 ------
 When the installation is as simple as unzipping the file to a certain game
@@ -81,5 +102,12 @@ Uninstall works in exactly the same way as with units.
 
 'walls.zip' does not work; it crashes Dark Reign.  I believe that it doesn't
 work on Windows either, unfortunately I don't have a Windows machine at this
-time to confirm the theory.  'walls.sh' installs in exactly the same way as
+time to confirm the theory.  'build.sh' installs in exactly the same way as
 'walls.bat' from the original archive, and all other buildings work fine.
+
+
+META
+----
+Only the Auran addons are currently supported, since these are the only ones of
+which I am currently aware.  If you want me to add installers for another style
+of addon, drop me an email, it shouldn't be a problem.

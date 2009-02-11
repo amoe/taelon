@@ -23,7 +23,7 @@
 
 prefix = /usr/local
 
-obj_sh = terr.sh unit.sh combo.sh build.sh
+obj_sh = terr.sh unit.sh combo.sh build.sh terrain.sh
 
 all: unpack pak paklist
 
